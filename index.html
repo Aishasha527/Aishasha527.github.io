@@ -83,7 +83,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/23/control-character/">control_character</a>
+      <a class="p-name article-title" href="/2024/06/23/control-character/">转义字符：&#39;\\&#39; + &#39;0&#39; = &#39;\0&#39;?</a>
     </h1>
   
 
@@ -91,7 +91,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="转义字符：’-‘-‘0’-‘-0’"><a href="#转义字符：’-‘-‘0’-‘-0’" class="headerlink" title="转义字符：’\‘ + ‘0’ &#x3D; ‘\0’?"></a>转义字符：’\‘ + ‘0’ &#x3D; ‘\0’?</h1><p>在用C语言写程序时，一个非常关于字符串基础的知识点就是：字符串是由一系列字符组成的，以’\0’（空字符）作为结束标志。这个空字符的ASCII码值为0，<br>像这种无法在屏幕上打印的字符叫做不可见字符，类似的还有’\n’代表换行。但是曾经令我困惑的一个点在于，编程的时候我明明是先按了一下键盘上的’&#39;又按了<br>键盘上的’0’，我的电脑接收的两个字符分别是’&#39;的ASCII码5C和’0’的ASCII码30，计算机在储存我写的代码的时候应该也是这样储存的，这明明是，那么这两个<br>字符，是什么时机忽然合体了呢？</p>
+        <p>在用C语言写程序时，一个非常关于字符串基础的知识点就是：字符串是由一系列字符组成的，以’\0’（空字符）作为结束标志。这个空字符的ASCII码值为0，<br>像这种无法在屏幕上打印的字符叫做不可见字符，类似的还有’\n’代表换行。但是曾经令我困惑的一个点在于，编程的时候我明明是先按了一下键盘上的’&#39;又按了<br>键盘上的’0’，我的电脑接收的两个字符分别是’&#39;的ASCII码5C和’0’的ASCII码30，计算机在储存我写的代码的时候应该也是这样储存的，这明明是，那么这两个<br>字符，是什么时机忽然合体了呢？</p>
 <h3 id="C语言打印字符串"><a href="#C语言打印字符串" class="headerlink" title="C语言打印字符串"></a>C语言打印字符串</h3><p><img src="/../images/1.png"><br>可以看到字符串”abc\0c”在\0处停止被打印，因为计算机找到第一个’\0’时就认为这个字符串已经结束了。</p>
 <h3 id="程序的储存"><a href="#程序的储存" class="headerlink" title="程序的储存"></a>程序的储存</h3><p><img src="/../images/2.png"><br>20行末尾和30行的开头可以看到字符串”abc\0c”的储存方式是ASCII码，值为 61 62 63 5c 30 63,其中\0也是以5c63这个值被储存，并且占了两个字节。</p>
 <h3 id="编译后的文件"><a href="#编译后的文件" class="headerlink" title="编译后的文件"></a>编译后的文件</h3><p><img src="/../images/3.png"><br>60行标红的位置可以看到此时的字符串”abc\0c”变为了61 62 63 00 63 00，第一个00是上文中的’&#39;和’0’被编译器改成了ASCII码为0的字符，第二个<br>00是代表编译器认为的这个字符串的结尾位置。</p>
@@ -100,7 +100,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/23/control-character/" data-id="clxr99fn80000vgtt1hyh8a7a" data-title="control_character" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/23/control-character/" data-id="clxr99fn80000vgtt1hyh8a7a" data-title="转义字符：&#39;\\&#39; + &#39;0&#39; = &#39;\0&#39;?" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -194,7 +194,7 @@
       <ul>
         
           <li>
-            <a href="/2024/06/23/control-character/">control_character</a>
+            <a href="/2024/06/23/control-character/">转义字符：&#39;\\&#39; + &#39;0&#39; = &#39;\0&#39;?</a>
           </li>
         
           <li>
